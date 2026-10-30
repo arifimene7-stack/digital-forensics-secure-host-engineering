@@ -1,0 +1,50 @@
+# Lab Inventory
+
+- **OS:** Ubuntu 26.04 LTS (Linux 6.8.0-31-generic)
+- **Kernel:** 7.0.0-31-generic
+- **Hostname:** imene-Aspire-A515-54
+- **User:** imene
+- **Groups:** imene adm cdrom sudo dip plugdev lpadmin sambashare
+- **Disks:** /dev/sda1 (vfat, /boot/efi), /dev/sda2 (ext4, /), /dev/sda3 (ext4, /home)
+- **Filesystems:** ext4, vfat, tmpfs, efivarfs
+- **Network:** lo, wlo1 (Wi-Fi)
+- **IP:** 192.0.2.10/24 
+- **Routes:** default via 192.0.2.1 dev wlo1
+- **Sockets:** 
+- `127.0.0.1:631` (CUPS)
+- `127.0.0.1:53` (systemd-resolved)
+- `0.0.0.0:5353` (Avahi Daemon)
+- `[::]:5353` (Avahi Daemon)
+- `127.0.0.53:53` (systemd-resolved)
+- `127.0.0.1:323` (chronyd)
+- `[::1]:323` (chronyd)
+**Services:**
+- accounts-daemon.service
+- avahi-daemon.service
+- chrony.service
+- colord.service
+- cron.service
+- cups-browsed.service
+- cups.service
+- dbus.service
+- fwupd.service
+- gdm.service
+- ModemManager.service
+- NetworkManager.service
+- polkit.service
+- power-profiles-daemon.service
+- rsyslog.service
+- snapd.service
+- switcheroo-control.service
+- systemd-journald.service
+- systemd-logind.service
+- systemd-oomd.service
+- systemd-resolved.service
+- systemd-udevd.service
+- thermald.service
+- udisks2.service
+- unattended-upgrades.service
+- upower.service
+- user@1000.service
+- uuidd.service
+- wpa_supplicant.service
