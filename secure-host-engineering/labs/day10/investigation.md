@@ -157,7 +157,7 @@ Moderate, limited by:
 
 - The point-in-time nature of the investigation.
 - Journal coverage limitations.
-- The incomplete evidence integrity verification.
+- The documented recovery of apparmor.txt and the limitations of the original evidence metadata.
 - The absence of independent corroboration for some observations.
 
 ## 6. Recommendations
@@ -177,6 +177,26 @@ The investigation did not establish confirmed host compromise based on the avail
 
 Several configuration and service issues require attention, particularly the inactive firewall and system warnings.
 
-Evidence inventory validation was successful, but SHA-256 verification identified one integrity mismatch involving `apparmor.txt`.
+Evidence integrity verification initially identified one SHA-256 mismatch involving `apparmor.txt`. The file was subsequently restored from a separate local copy whose SHA-256 hash matched the value in the original manifest.
 
-The findings should therefore be interpreted with the documented limitations and should not be treated as proof of complete system integrity.
+Following restoration, all 28 evidence files passed SHA-256 verification (28/28). The original manifest was not modified.
+
+This confirms byte-level agreement with the recorded hashes after recovery. It does not independently establish the authenticity of the original evidence or restore the original metadata of the recovered file.
+
+## 8. Evidence Recovery Record – AppArmor
+
+During final integrity verification, `proof/apparmor.txt` was found empty and did not match its expected SHA-256 hash in the original evidence manifest.
+
+The file content was restored from a separate local working copy. The recovered content was:
+
+`active`
+
+The recovered file's SHA-256 hash:
+
+`45df5ad5e0ecfa54d3226343e0e6857337494ba6e32f189d1174070665d8c659`
+
+This hash matches the original value recorded in `proof/evidence-sha256.txt`.
+
+After recovery, all 28 evidence files passed SHA-256 verification (28/28). The original manifest remained unchanged.
+
+**Forensic limitations:** The recovery restored content matching the hash recorded in the manifest. It did not restore the original file metadata. The recovery source and procedure are documented to preserve transparency about the evidence history.
